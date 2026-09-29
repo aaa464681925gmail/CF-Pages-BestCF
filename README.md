@@ -40,6 +40,12 @@ npx serve .
 3. 项目配置：**构建命令留空**，**输出目录填 `/`**（根目录）
 4. 部署完成后访问 `https://<你的项目名>.pages.dev`
 
+> 🔗 跨域支持：项目已内置 `_headers` 文件，部署后全站响应自动附带允许跨域的响应头（CORS 允许任意来源拉取资源、`CSP frame-ancestors *` 允许任意站点嵌入、无 `X-Frame-Options`），可在你的其他站点中直接 iframe 嵌入本页面，或跨域拉取 `/cf_domains.txt` 等资源：
+
+```html
+<iframe src="https://<你的项目名>.pages.dev" style="width:100%;height:600px;border:0;"></iframe>
+```
+
 ## 🚀 使用示例
 
 1. **打开页面**，等待自动检测网络环境（IPv4 / IPv6）。若检测到代理、VPN 或境外网络会弹出「红牌警告」，此时只能改用弹窗中的「本地优选」工具目录。
